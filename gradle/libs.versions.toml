@@ -4,7 +4,11 @@
 [versions]
 guava = "33.0.0-jre"
 junit-jupiter = "5.10.2"
+angus-mail = "2.0.3"
+lombock = "1.18.36"
 
 [libraries]
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+angus-mail = { module = "org.eclipse.angus:angus-mail", version.ref = "angus-mail" }
+lombock = { module = "org.projectlombok:lombok", version.ref = "lombock" }
