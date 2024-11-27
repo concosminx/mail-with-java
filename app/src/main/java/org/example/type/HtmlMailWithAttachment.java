@@ -2,30 +2,34 @@ package org.example.type;
 
 import jakarta.mail.*;
 import jakarta.mail.internet.*;
-
-import java.io.File;
+import org.example.objects.MessageObj;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Objects;
 
-public class HtmlMailWithAttachment implements MailType {
+
+public class HtmlMailWithAttachment implements MessageType {
 
     @Override
-    public Message create(Session session, String from, String to, String subject, String body) throws MessagingException, URISyntaxException, IOException {
+    public Message create(Session session, MessageObj messageObj) throws MessagingException, URISyntaxException, IOException {
+
+
         Message message = new MimeMessage(session);
-        message.setFrom(new InternetAddress(from));
-        message.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
-        message.setSubject(subject);
-
-        BodyPart messageBodyPart = new MimeBodyPart();
-        messageBodyPart.setContent(body, "text/html; charset=utf-8");
-
-        MimeBodyPart attachmentPart = new MimeBodyPart();
-        attachmentPart.attachFile(new File(Objects.requireNonNull(App.class.getResource("/pdf-sample.pdf")).toURI()));
+        message.setFrom(new InternetAddress(messageObj.getFrom()));
+        message.setRecipient(Message.RecipientType.TO, new InternetAddress(messageObj.getTo()));
+        message.setRecipient(Message.RecipientType.CC, new InternetAddress(messageObj.getTo()));
+        message.setSubject(messageObj.getSubject());
 
         Multipart multipart = new MimeMultipart();
+
+        BodyPart messageBodyPart = new MimeBodyPart();
+        messageBodyPart.setContent(messageObj.getBody(), "text/html; charset=utf-8");
         multipart.addBodyPart(messageBodyPart);
-        multipart.addBodyPart(attachmentPart);
+
+        if (messageObj.getAttachment() != null) {
+            MimeBodyPart attachmentPart = new MimeBodyPart();
+            attachmentPart.attachFile(messageObj.getAttachment());
+            multipart.addBodyPart(attachmentPart);
+        }
 
         message.setContent(multipart);
 
