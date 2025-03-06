@@ -5,11 +5,9 @@ import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
-import org.example.objects.MessageObj;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
-
+import org.example.objects.MessageObj;
 
 public class HtmlMailWithImage implements MessageType {
 

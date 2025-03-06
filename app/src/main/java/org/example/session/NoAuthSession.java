@@ -1,7 +1,6 @@
 package org.example.session;
 
 import jakarta.mail.Session;
-
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 

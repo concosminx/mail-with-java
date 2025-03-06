@@ -4,16 +4,15 @@
 package org.example;
 
 import jakarta.mail.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.Objects;
 import org.example.objects.MessageObj;
 import org.example.session.GmailSmtpTLSSession;
 import org.example.session.MailSession;
 import org.example.type.HtmlMailWithImage;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.Objects;
 
 class GmailTLSAuthSessionTest {
 

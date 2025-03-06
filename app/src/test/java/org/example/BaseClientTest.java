@@ -21,9 +21,8 @@ public class BaseClientTest {
     sb.append("Message info").append("\n");
     try {
       Address[] from = msg.getFrom();
-      Arrays.stream(from).forEach(
-          address -> sb.append("From: " + ((InternetAddress) address).getAddress())
-      );
+      Arrays.stream(from)
+          .forEach(address -> sb.append("From: " + ((InternetAddress) address).getAddress()));
       sb.append("\n");
       sb.append("Sent date:" + msg.getSentDate()).append("\n");
       sb.append("Subject:" + msg.getSubject()).append("\n");
@@ -41,17 +40,12 @@ public class BaseClientTest {
         sb.append("File name: ").append(bp.getFileName()).append("\n");
         sb.append("Size: ").append(bp.getSize()).append("\n");
 
-
         if (Part.ATTACHMENT.equalsIgnoreCase(bp.getDisposition())) {
           String file = bp.getFileName();
 
           File targetFile = new File(file);
           InputStream initialStream = bp.getInputStream();
-          Files.copy(
-              initialStream,
-              targetFile.toPath(),
-              StandardCopyOption.REPLACE_EXISTING
-          );
+          Files.copy(initialStream, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
           initialStream.close();
         }
       }

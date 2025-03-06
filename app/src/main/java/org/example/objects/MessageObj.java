@@ -1,9 +1,8 @@
 package org.example.objects;
 
+import java.io.File;
 import lombok.Builder;
 import lombok.Data;
-
-import java.io.File;
 
 @Data
 @Builder

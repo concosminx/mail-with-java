@@ -3,7 +3,6 @@ package org.example.session;
 import jakarta.mail.Authenticator;
 import jakarta.mail.PasswordAuthentication;
 import jakarta.mail.Session;
-
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 

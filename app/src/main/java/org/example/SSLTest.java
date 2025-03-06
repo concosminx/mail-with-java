@@ -5,8 +5,6 @@ import javax.net.ssl.SSLSocketFactory;
 
 public class SSLTest {
 
-
-
   public static void main(String[] args) throws Exception {
     SSLUtils.disableSSLValidation();
 
@@ -16,5 +14,4 @@ public class SSLTest {
     socket.startHandshake();
     System.out.println("Conexiune reusita!");
   }
-
 }

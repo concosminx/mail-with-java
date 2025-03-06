@@ -8,11 +8,10 @@ import jakarta.mail.search.AndTerm;
 import jakarta.mail.search.BodyTerm;
 import jakarta.mail.search.SearchTerm;
 import jakarta.mail.search.SubjectTerm;
+import java.util.Arrays;
 import org.example.session.GmailImapSession;
 import org.example.session.MailSession;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 class GmailImapSessionTest extends BaseClientTest {
 

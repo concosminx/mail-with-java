@@ -2,10 +2,9 @@ package org.example.type;
 
 import jakarta.mail.*;
 import jakarta.mail.internet.*;
-import org.example.objects.MessageObj;
 import java.io.IOException;
 import java.net.URISyntaxException;
-
+import org.example.objects.MessageObj;
 
 public class HtmlMailWithAttachment implements MessageType {
 

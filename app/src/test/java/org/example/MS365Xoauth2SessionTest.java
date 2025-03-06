@@ -26,18 +26,19 @@ class MS365Xoauth2SessionTest {
 
     MailSession noAuthSession = new MS365Xoauth2Session();
 
-    MessageObj messageObj = MessageObj.builder()
-        .from(from)
-        .to(to)
-        .subject("test with attachment")
-        .body("body with attachment")
-        .attachment(new File(Objects.requireNonNull(MessageObj.class.getResource("/png-sample.png")).toURI()))
-        .build();
+    MessageObj messageObj =
+        MessageObj.builder()
+            .from(from)
+            .to(to)
+            .subject("test with attachment")
+            .body("body with attachment")
+            .attachment(
+                new File(
+                    Objects.requireNonNull(MessageObj.class.getResource("/png-sample.png"))
+                        .toURI()))
+            .build();
 
     Message message = new HtmlMailWithImage().create(noAuthSession.getSession(), messageObj);
     Transport.send(message);
   }
-
-
-
 }

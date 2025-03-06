@@ -4,6 +4,5 @@ import jakarta.mail.Session;
 
 public interface MailSession {
 
-    Session getSession();
-
+  Session getSession();
 }

@@ -1,7 +1,6 @@
 package org.example.session;
 
 import jakarta.mail.Session;
-
 import java.util.Properties;
 
 public class GmailImapSession implements MailSession {

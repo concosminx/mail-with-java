@@ -10,6 +10,6 @@ import java.net.URISyntaxException;
 
 public interface MessageType {
 
-    Message create(Session session, MessageObj messageObj) throws MessagingException, URISyntaxException, IOException;
-
+  Message create(Session session, MessageObj messageObj)
+      throws MessagingException, URISyntaxException, IOException;
 }
